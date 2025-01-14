@@ -87,7 +87,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	cotacaoDB := database.NewCotacaoDB(db)
 
-	ctxInsert, cancelInsert := context.WithTimeout(context.Background(), time.Millisecond*200)
+	ctxInsert, cancelInsert := context.WithTimeout(context.Background(), time.Millisecond*10)
 	defer cancelInsert()
 
 	err = cotacaoDB.Insert(ctxInsert, c)
